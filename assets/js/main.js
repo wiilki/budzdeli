@@ -100,20 +100,19 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
-
-      let body = select('body')
-      if (body.classList.contains('mobile-nav-active')) {
-        body.classList.remove('mobile-nav-active')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
+  on('click', '.nav-link', function(e) {
+    const target = this.getAttribute('href');
+    
+    if (target === '#shop-la' || target === '#shop-sfv') {
+      e.preventDefault(); // Prevent default anchor behavior
+      const page = target === '#shop-la' ? 'shop-la.html' : 'shop-sfv.html';
+      window.location.href = page; // Navigate to the respective page
+    } else if (select(this.hash)) {
+      e.preventDefault();
+      // ... existing code for smooth scrolling ...
     }
-  }, true)
+  }, true);
+  
 
   /**
    * Scroll with ofset on page load with hash links in the url
