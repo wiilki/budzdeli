@@ -18,5 +18,6 @@ app.use((req, res, next) => {
 app.use(express.static('public'));
 app.use('/', htmlRoutes);
 
-// Start the server on the port
-app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
