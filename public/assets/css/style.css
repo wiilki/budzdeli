@@ -127,27 +127,20 @@ h6 {
   overflow-y: auto;
 }
 
-.shop-button {
-  font-family: 'Open Sans', sans-serif;
-  font-size: 18px;
-  /* Slightly larger font size */
-  font-weight: 900;
-  color: black;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: transparent;
-  padding: 12px 24px;
-  /* Slightly larger padding */
-  margin: 20px;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
-  /* Shadow for depth */
+.shop-buttons a {
+  background: transparent;
+  color: white;
+  border: solid 2px white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  opacity: 0.9;
+  font-weight: 700;
+  margin: 30px 20px;
 }
 
-.shop-button:hover {
-  background-color: black;
+.shop-buttons a:hover {
+  background: #afafaf;
   color: white;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   /* Darker shadow on hover */
@@ -305,15 +298,15 @@ h6 {
   position: relative;
 }
 
-@media (min-width: 992px) {
-  #hero {
-    padding-left: 160px;
-  }
+#hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -323,6 +316,7 @@ h6 {
 
 #hero img {
   max-width: 50%;
+  margin: 30px;
 }
 
 #hero h1 {
@@ -330,7 +324,11 @@ h6 {
   font-size: 64px;
   font-weight: 700;
   line-height: 56px;
-  color: #45505b;
+  color: #ffffff;
+}
+
+#hero h1 {
+  margin: 30px;
 }
 
 #hero p {
@@ -338,6 +336,7 @@ h6 {
   margin: 20px 0px 0px 20px;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
+  margin: 30px;
 }
 
 #hero p span {
@@ -1133,8 +1132,12 @@ section {
   /* Targeting icons */
   font-size: 24px;
   /* Increase icon size */
-  margin-right: 10px;
-  /* Adjust spacing between icon and text */
+  margin-top: 1px;
+  margin-right: 1px;
+}
+
+#disclaimer p {
+  line-height: normal;
 }
 
 /* Responsive Design for Footer */
