@@ -2,6 +2,13 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+// Middleware to remove ".html" extension from URLs
+app.use((req, res, next) => {
+  const urlWithoutExtension = req.url.replace(/\.html$/, '');
+  req.url = urlWithoutExtension;
+  next();
+});
+
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
