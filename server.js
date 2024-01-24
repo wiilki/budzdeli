@@ -1,28 +1,23 @@
 const express = require('express');
-const path = require('path');
-const app = express();
-
-// Middleware to remove ".html" extension from URLs
-app.use((req, res, next) => {
-  const urlWithoutExtension = req.url.replace(/\.html$/, '');
-  req.url = urlWithoutExtension;
-  next();
-});
-
-// Serve static files from the 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
-
-// Your route setup for HTML files
 const htmlRoutes = require('./routes/htmlRoutes');
+
+// Initialize the app and create a port
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Set up body parsing, static, and route middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+app.use((req, res, next) => {
+    console.log('Request URL:', req.originalUrl);
+    next();
+  });
+ 
+
+app.use(express.static('public'));
 app.use('/', htmlRoutes);
 
-// All other routes respond with the index.html file
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public/index.html'));
-});
-
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+app.listen(PORT, () =>
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
+);
