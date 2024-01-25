@@ -490,7 +490,12 @@ h6 {
   color: white;
 }
 
-.location-card>a {
+.location-card>a:nth-child(4) {
+  background: transparent;
+  color: white;
+}
+
+.location-card>a:nth-child(5) {
   background: transparent;
   color: white;
   border: solid 2px white;
