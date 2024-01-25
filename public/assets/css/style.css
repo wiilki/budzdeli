@@ -291,11 +291,12 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
-  width: 100%;
-  height: 100vh;
-  background: url("../img/home-bg.jpeg") center no-repeat;
+  text-align: center;
+  background-image: url('../img/home-bg.jpeg');
   background-size: cover;
-  position: relative;
+  background-position: center;
+  color: white;
+  text-shadow: 1px 1px black;
 }
 
 #hero-container {
@@ -386,6 +387,141 @@ h6 {
     line-height: 24px;
   }
 }
+
+/*--------------------------------------------------------------
+# Location Cards Section
+--------------------------------------------------------------*/
+#location-cards {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  text-shadow: 1px 1px 2px black;
+  font-weight: bold;
+}
+
+#location-cards .container {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+gap: 20px;
+}
+
+.location-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 0 1 calc(50% - 20px);
+  margin-bottom: 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden
+}
+
+.location-card::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  bottom: -20px;
+  left: -20px;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+}
+
+.location-card-first::before {
+  background-image: url('../img/labg.jpg');
+}
+
+.location-card-second::before {
+  background-image: url('../img/sfvbg.jpg');
+}
+
+.location-card-first {
+  background-image: url('../img/labg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.location-card > a {
+  background: transparent;
+  color: white;
+  border: solid 2px white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  margin: 30px 20px;
+}
+
+.location-card > a:hover {
+  background: #afafaf;
+  color: white;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.location-card-second {
+  background-image: url('../img/sfvbg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+/*--------------------------------------------------------------
+# Offers Section
+--------------------------------------------------------------*/
+#offers-container .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  background: #f9f9f9; /* Optional: Set a background color */
+  border-radius: 8px;
+}
+
+.left-offers,
+.right-offers {
+  flex: 1;
+  padding: 15px;
+  text-align: center;
+}
+
+.left-offers {
+  line-height: 35px;
+}
+
+#offers-container .btn.btn-custom.btn-black-bg {
+  background: transparent;
+  border: solid 1px black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  opacity: 0.9;
+  color: black;
+}
+
+#offers-container .btn.btn-custom.btn-black-bg:hover {
+  background: #333;
+  color: white;
+}
+
+/* Responsive Design for Offers Section */
+@media screen and (max-width: 992px) {
+  #offers-container {
+    flex-direction: column;
+  }
+
+  .right-offers {
+    display: none; /* Hide right offers on smaller screens */
+  }
+
+  .left-offers {
+    width: 100%; /* Left offers take full width */
+  }
+}
+
 
 /*--------------------------------------------------------------
 # Sections General
@@ -527,6 +663,54 @@ section {
   margin-bottom: 30px;
 }
 
+.portfolio-wrap {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.portfolio-label {
+  position: absolute;
+  z-index: 2; /* Ensures the label is above the image */
+  background: transparent;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  opacity: 0.9;
+  font-weight: 700;
+  text-align: center;
+}
+
+
+.portfolio-label h4{
+font-size: 2.5rem;
+
+}
+
+.portfolio-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.portfolio-wrap:hover .portfolio-info {
+  opacity: 1; /* Show on hover */
+}
+
+.btn-custom {
+  margin: 5px;
+}
+
+
 .portfolio #portfolio-flters {
   padding: 0;
   margin: 0 auto 25px auto;
@@ -560,6 +744,7 @@ section {
 }
 
 .portfolio .portfolio-wrap {
+  border-radius: 40px;
   transition: 0.3s;
   position: relative;
   overflow: hidden;
@@ -649,10 +834,12 @@ section {
   font-size: 28px;
   display: inline-block;
   transition: 0.3s;
+  border: solid 2px white;
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #148af9;
+  color: #ffffff;
+  font-weight: 600;
 }
 
 .portfolio .portfolio-wrap:hover::before {
@@ -1044,8 +1231,8 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #f7f8f9;
-  color: #45505b;
+  background: #45505b;
+  color: #ffffff;
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
@@ -1079,7 +1266,7 @@ section {
 #footer .social-links a {
   font-size: 18px;
   display: inline-block;
-  background: #0563bb;
+  background: transparent;
   color: #fff;
   line-height: 1;
   padding: 5px;
@@ -1119,6 +1306,13 @@ section {
   /* Adjust padding as necessary */
 }
 
+#footer a {
+font-weight: 600;
+color: #47aeff;
+}
+
+
+
 /* Footer Address and Phone Number Styles */
 #footer .la-info,
 #footer .sfv-info,
@@ -1131,9 +1325,8 @@ section {
 #footer .bx {
   /* Targeting icons */
   font-size: 24px;
-  /* Increase icon size */
-  margin-top: 1px;
-  margin-right: 1px;
+  margin-right: 10px;
+  color: #47aeff;
 }
 
 #disclaimer p {
