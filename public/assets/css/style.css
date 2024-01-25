@@ -266,8 +266,10 @@ h6 {
   outline: none !important;
   line-height: 0;
   cursor: pointer;
-  border-radius: 50px;
+  border: solid rgb(255, 255, 255, .7);
+  border-radius: 10px;
   padding: 5px;
+  color: white;
 }
 
 .mobile-nav-toggle i {
@@ -297,7 +299,19 @@ h6 {
   background-position: center;
   color: white;
   text-shadow: 1px 1px black;
+  position: relative; /* Add this to establish a positioning context */
 }
+
+#hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px; /* Adjust the height of the fade effect as needed */
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); /* Fading into white background */
+}
+
 
 #hero-container {
   display: flex;
@@ -365,7 +379,7 @@ h6 {
 #hero .typed {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   /* Shadow to make text stand out */
-  color: rgba(255, 217, 0, 0.8);
+  color: rgba(255, 217, 0, 0.648);
   font-weight: 200;
   font-family: 'Brush Script MT', cursive; 
   font-size: 80px;
@@ -560,20 +574,9 @@ section {
   display: block;
   width: 120px;
   height: 1px;
-  background: #ddd;
+  background: #0563bb;
   bottom: 1px;
   left: calc(50% - 60px);
-}
-
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #0563bb;
-  bottom: 0;
-  left: calc(50% - 20px);
 }
 
 .section-title p {
