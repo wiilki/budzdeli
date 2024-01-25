@@ -269,7 +269,7 @@ h6 {
   border-radius: 10px;
   padding: 5px;
   color: rgba(0, 0, 0, 0.616);
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgb(255, 255, 255, .4);
 }
 
 .mobile-nav-toggle i {
@@ -437,14 +437,30 @@ h6 {
 
 .location-card {
   background: #fff;
-  padding: 20px;
+  padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   flex: 0 1 calc(50% - 20px);
   margin-bottom: 20px;
   text-align: center;
   position: relative;
-  overflow: hidden
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.store-logo {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add this CSS for centering the logo image */
+.location-card img.store-logo {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 .location-card::before {
