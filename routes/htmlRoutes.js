@@ -11,6 +11,11 @@ router.get('/contact', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/contact.html'));
 });
 
+// "/offers" responds with the offers.html file
+router.get('/offers', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/offers.html'));
+});
+
 // "/shop-la" responds with the shop-la.html file
 router.get('/shop-la', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/shop-la.html'));
