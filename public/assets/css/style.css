@@ -379,7 +379,15 @@ h6 {
   color: #0563bb;
 }
 
-#hero .typed {
+/* Define the Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply the Animation to the Paragraph */
+#hero p {
+  animation: fadeIn 4s ease-in-out;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   /* Shadow to make text stand out */
   color: rgba(255, 217, 0, 0.648);
@@ -387,6 +395,7 @@ h6 {
   font-family: 'Brush Script MT', cursive;
   font-size: 80px;
 }
+
 
 @media (max-width: 992px) {
   #hero {
@@ -402,16 +411,14 @@ h6 {
     margin: 10px 0px 0px 0px;
     font-size: 20px;
     line-height: 24px;
-  }
-
-  #hero .typed {
     font-size: 40px;
     color: rgba(255, 217, 0);
   }
+
 }
 
 @media screen and (max-width: 768px) {
-  #hero .typed {
+  #hero .p {
     font-size: 25px;
   }
 }
