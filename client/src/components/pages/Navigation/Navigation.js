@@ -46,7 +46,7 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
           <li className="nav-item">
             <a
-              href="/shopla"
+              href="https://thawing-forest-44383-9dbdc2057fd5.herokuapp.com/shopla"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavLinkClick('ShopLA');
