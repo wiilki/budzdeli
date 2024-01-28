@@ -1,0 +1,330 @@
+#main-content {
+    padding-top: 100px;
+  }
+  
+  /* Styles for page transitions */
+  .fade-enter {
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+  }
+  
+  .fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 1000ms ease-in;
+  }
+  
+
+  #navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+    padding: 0;
+    background-color: white;
+    
+  }
+  
+  .nav-menu * {
+    font-weight: 500;
+    margin: 2px;
+    padding: 0;
+    list-style: none;
+    color: black; /* Text color set to black */
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .navtitle {
+    padding: 5px 40px 5px 40px;
+  }
+  
+  .navtitle > img {
+    max-width: 200px;
+  }
+  
+  .nav-menu > ul > li {
+    position: relative;
+    white-space: nowrap;
+  }
+  
+  .nav-menu a,
+  .nav-menu a:focus {
+    display: flex;
+    align-items: center;
+    color: black;
+    padding: 10px 20px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+    border-radius: 10px;
+    height: 56px;
+    width: 100%;
+    overflow: hidden;
+    transition: 0.3s;
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+  }
+  
+  .nav-menu a i,
+  .nav-menu a:focus i {
+    font-size: 20px;
+  }
+  
+  .nav-menu a span,
+  .nav-menu a:focus span {
+    padding: 0 5px 0 7px;
+    color: black; /* Text color set to black */
+  }
+  
+  @media (min-width: 992px) {
+    .nav-menu a span,
+    .nav-menu a:focus span {
+      color: black; /* Text color set to black for larger screens */
+    }
+  }
+  
+  .nav-menu a:hover,
+  .nav-menu .active,
+  .nav-menu .active:focus,
+  .nav-menu li:hover > a {
+    background: none; /* Remove background on hover */
+    color: #555; /* Change text color on hover */
+    font-weight: 600; /* Make font weight bolder on hover */
+  }
+  
+  .nav-menu a:hover span,
+  .nav-menu .active span,
+  .nav-menu .active:focus span,
+  .nav-menu li:hover > a span {
+    color: #555; /* Change text color on hover */
+  }
+  
+  .mobile-nav-toggle {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    z-index: 9998;
+    border: 0;
+    background: none;
+    font-size: 28px;
+    transition: all 0.4s;
+    outline: none !important;
+    line-height: 0;
+    cursor: pointer;
+    border-radius: 50px;
+    padding: 5px;
+    color: black; /* Text color set to black */
+  }
+  
+  .mobile-nav-toggle i {
+    color: black; /* Text color set to black */
+  }
+  
+  .mobile-nav-active {
+    overflow: hidden;
+  }
+  
+  .mobile-nav-active #header {
+    left: 0;
+  }
+  
+  .mobile-nav-active .mobile-nav-toggle {
+    color: #fff;
+    background-color: #0563bb;
+  }
+
+  
+  #footer {
+    background: #45505b;
+    color: #ffffff;
+    font-size: 14px;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  #footer .container {
+    text-align: left;
+    max-width: 100%;
+    margin: auto;
+    padding: 20px 200px;
+  }
+  
+  #footer .col {
+    margin-bottom: 20px;
+  }
+  
+  #footer h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+  }
+  
+  #footer a {
+    display: block;
+    margin: 5px 0;
+    color: #73b3f0;
+    text-decoration: none;
+  }
+  
+  #footer a:hover {
+    color: #0678e3;
+  }
+  
+  #footer p,
+  #footer a {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  #footer .social-links a {
+    margin-right: 10px;
+    font-size: 24px;
+  }
+  
+  #footer .disclaimer {
+    font-size: 20px;
+  }
+  
+  #footer .copyright {
+    margin: 10px 0;
+    font-size: 15px;
+  }
+  
+  #footer .col h1,
+  #footer .col p,
+  #footer .col a {
+    margin-bottom: 0.5rem;
+  }
+  
+  #footer .col p {
+    display: flex;
+    align-items: center;
+  }
+  
+  #footer .fa-phone,
+  #footer .fa-clock {
+    margin-right: 1.5rem;
+  }
+  
+  #footer .copyright {
+    text-align: center;
+    width: 100%;
+    margin-top: 2rem;
+  }
+  
+  .la-info,
+  .sfv-info {
+    margin: 0px 0px 40px 0px
+  }
+  
+  
+  .quick-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin-left: 10px;
+  }
+  
+  @media (max-width: 1024px) {
+    #footer .container {
+      padding: 20px 50px;
+    }
+  
+    #footer h1 {
+      font-size: 20px;
+    }
+  
+    #footer .la-info,
+    #footer .sfv-info,
+    .quick-links {
+      margin: 10px 0px;
+    }
+  
+    #footer .col {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  
+  }
+  
+  @media (max-width: 768px) {
+    #footer .container {
+      padding: 20px;
+    }
+  
+    #footer .row {
+      flex-direction: column;
+    }
+  
+    #footer .col,
+    #footer .col h1,
+    #footer .col p,
+    #footer .col a,
+    #footer .disclaimer,
+    #footer .copyright {
+      text-align: center;
+    }
+  
+    #footer .disclaimer {
+      font-size: 10px;
+    }
+  
+    .quick-links {
+      display: block;
+    }
+  
+    #footer .social-links {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  
+    #footer .social-links a {
+      font-size: 30px;
+    }
+  
+    #footer p,
+    #footer a {
+      font-size: 18px;
+    }
+  
+    #footer .fa-phone {
+      margin-right: 0rem;
+      align-self: center;
+    }
+  
+    #footer .col p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  
+  @media (min-width: 769px) {
+   .map-icon {
+    margin-right: 25px;
+   }
+  }
+  
+  /* CSS to hide the duplicate iframe */
+  .footer + iframe,
+  .footer iframe {
+      display: none;
+  }
+  
+  /* Or if the Footer has an ID */
+  #footer-id + iframe,
+  #footer-id iframe {
+      display: none;
+  }
+  
