@@ -1,0 +1,185 @@
+#footer {
+  background: #45505b;
+  color: #ffffff;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#footer .container {
+  text-align: left;
+  max-width: 100%;
+  margin: auto;
+  padding: 20px 200px;
+}
+
+#footer .col {
+  margin-bottom: 20px;
+}
+
+#footer h1 {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 15px 0;
+}
+
+#footer a {
+  display: block;
+  margin: 5px 0;
+  color: #73b3f0;
+  text-decoration: none;
+}
+
+#footer a:hover {
+  color: #0678e3;
+}
+
+#footer p,
+#footer a {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+#footer .social-links a {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+#footer .disclaimer {
+  font-size: 20px;
+}
+
+#footer .copyright {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+#footer .col h1,
+#footer .col p,
+#footer .col a {
+  margin-bottom: 0.5rem;
+}
+
+#footer .col p {
+  display: flex;
+  align-items: center;
+}
+
+#footer .fa-phone,
+#footer .fa-clock {
+  margin-right: 1.5rem;
+}
+
+#footer .copyright {
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.la-info,
+.sfv-info {
+  margin: 0px 0px 40px 0px
+}
+
+
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  margin-left: 10px;
+}
+
+@media (max-width: 1024px) {
+  #footer .container {
+    padding: 20px 50px;
+  }
+
+  #footer h1 {
+    font-size: 20px;
+  }
+
+  #footer .la-info,
+  #footer .sfv-info,
+  .quick-links {
+    margin: 10px 0px;
+  }
+
+  #footer .col {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+}
+
+@media (max-width: 768px) {
+  #footer .container {
+    padding: 20px;
+  }
+
+  #footer .row {
+    flex-direction: column;
+  }
+
+  #footer .col,
+  #footer .col h1,
+  #footer .col p,
+  #footer .col a,
+  #footer .disclaimer,
+  #footer .copyright {
+    text-align: center;
+  }
+
+  #footer .disclaimer {
+    font-size: 10px;
+  }
+
+  .quick-links {
+    display: block;
+  }
+
+  #footer .social-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #footer .social-links a {
+    font-size: 30px;
+  }
+
+  #footer p,
+  #footer a {
+    font-size: 18px;
+  }
+
+  #footer .fa-phone {
+    margin-right: 0rem;
+    align-self: center;
+  }
+
+  #footer .col p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) {
+ .map-icon {
+  margin-right: 25px;
+ }
+}
+
+/* CSS to hide the duplicate iframe */
+.footer + iframe,
+.footer iframe {
+    display: none;
+}
+
+/* Or if the Footer has an ID */
+#footer-id + iframe,
+#footer-id iframe {
+    display: none;
+}
