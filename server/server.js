@@ -6,6 +6,9 @@ const port = process.env.PORT || 5000;
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, '../client/build')));
 
+// Serve static files (including CSS) from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Routes for ShopLA and ShopSFV
 const shopLARoute = require('./routes/shopLA');
 const shopSFVRoute = require('./routes/shopSFV');
