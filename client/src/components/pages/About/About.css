@@ -1,0 +1,27 @@
+/* Custom styles on top of Bootstrap */
+.about {
+  background: #f7f7f7;
+  padding: 40px 0;
+}
+
+.about h1 {
+  color: #0563bb;
+  margin-bottom: 30px;
+}
+
+.about p {
+  margin-bottom: 20px;
+}
+
+.about img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .about h1 {
+    font-size: 28px;
+  }
+}
