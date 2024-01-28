@@ -8,6 +8,16 @@ import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
 
 const AppRouter = () => {
+  const handleShopLA = () => {
+    // Redirect to the ShopLA route, triggering a full page load
+    window.location.href = '/shopla';
+  };
+
+  const handleShopSFV = () => {
+    // Redirect to the ShopSFV route, triggering a full page load
+    window.location.href = '/shopsfv';
+  };
+
   return (
     <Router>
       <Header />
@@ -17,7 +27,7 @@ const AppRouter = () => {
         <Route path="/contact" element={<Contact />} />
         {/* Add more routes as needed */}
       </Routes>
-      <Footer />
+      <Footer handleShopLA={handleShopLA} handleShopSFV={handleShopSFV} />
     </Router>
   );
 };

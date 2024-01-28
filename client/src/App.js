@@ -1,3 +1,4 @@
+// App.js
 import React, { useState } from 'react';
 import Header from './components/pages/Header/Header';
 import Footer from './components/pages/Footer/Footer';
@@ -16,16 +17,12 @@ function App() {
     setCurrentPage(page);
     setIsNavCollapsed(true);
   };
-  
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'About':
-        return <About />;
-      case 'Contact':
-        return <Contact />;
-      default:
-        return <Home handlePageChange={handlePageChange} />;
-    }
+
+  // Define a mapping between page names and components
+  const pageComponents = {
+    Home: <Home handlePageChange={handlePageChange} />,
+    About: <About />,
+    Contact: <Contact />,
   };
 
   return (
@@ -39,7 +36,7 @@ function App() {
       <TransitionGroup>
         <CSSTransition key={currentPage} classNames="fade" timeout={1000}>
           <main id="main-content">
-            {renderPage()}
+            {pageComponents[currentPage]}
           </main>
         </CSSTransition>
       </TransitionGroup>
