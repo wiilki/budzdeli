@@ -46,11 +46,7 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
           <li className="nav-item">
             <a
-              href="https://thawing-forest-44383-9dbdc2057fd5.herokuapp.com/shopla"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavLinkClick('ShopLA');
-              }}
+              href="/shopla" // Use the correct URL for ShopLA
               className={currentPage === 'ShopLA' ? 'nav-link active' : 'nav-link'}
             >
               <i className="bx bx-envelope"></i> <span>SHOP LA</span>
@@ -58,16 +54,13 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
           <li className="nav-item">
             <a
-              href="/shopsfv"
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavLinkClick('ShopSFV');
-              }}
+              href="/shopsfv" // Use the correct URL for ShopSFV
               className={currentPage === 'ShopSFV' ? 'nav-link active' : 'nav-link'}
             >
               <i className="bx bx-envelope"></i> <span>SHOP SFV</span>
             </a>
           </li>
+
           <li className="nav-item">
             <a
               href="/about"
