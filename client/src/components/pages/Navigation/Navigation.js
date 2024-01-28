@@ -34,7 +34,7 @@ function Navigation({ currentPage, handlePageChange }) {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
             <a
-              href="#home"
+              href="/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavLinkClick('Home');
@@ -46,7 +46,7 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
           <li className="nav-item">
             <a
-              href="#shopla"
+              href="/shopla"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavLinkClick('ShopLA');
@@ -58,7 +58,7 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
           <li className="nav-item">
             <a
-              href="#shopsfv"
+              href="/shopsfv"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavLinkClick('ShopSFV');
@@ -70,7 +70,7 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
           <li className="nav-item">
             <a
-              href="#about"
+              href="/about"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavLinkClick('About');
@@ -82,7 +82,7 @@ function Navigation({ currentPage, handlePageChange }) {
           </li>
           <li className="nav-item">
             <a
-              href="#contact"
+              href="/contact"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavLinkClick('Contact');
