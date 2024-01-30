@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 function Hero() {
     return (
@@ -11,8 +12,8 @@ function Hero() {
                     <span className="typed" data-typed-items="Experience, Indulge, Elevate, Revitalize, Enjoy, Rejuvenate, Relax"></span>
                 </p>
                 <div className="shop-buttons">
-                    <a href="/shopla" className="shop-button">Shop LA</a>
-                    <a href="/shopsfv" className="shop-button">Shop SFV</a>
+                    <Link href="/shopla" className="shop-button">Shop LA</Link>
+                    <Link href="/shopsfv" className="shop-button">Shop SFV</Link>
                 </div>
             </div>
         </section>

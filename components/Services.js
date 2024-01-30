@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Services = () => {
   return (
@@ -6,7 +7,7 @@ const Services = () => {
       <div className="container" data-aos="fade-up">
         <div className="section-title">
           <h2>Services</h2>
-          <p>Whether you're looking for delivery, quick pickup options, or an in-store shopping experience, we've got you covered.</p>
+          <p>Whether you&apos;re looking for delivery, quick pickup options, or an in-store shopping experience, we&apos;ve got you covered.</p>
         </div>
         <div className="row">
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -17,7 +18,7 @@ const Services = () => {
                 </svg>
                 <i className="bi bi-car-front"></i>
               </div>
-              <h4><a href="">Delivery</a></h4>
+              <h4><Link href="">Delivery</Link></h4>
               <p>We offer delivery services to multiple areas in both Los Angeles (LA) and San Fernando Valley (SFV)</p>
             </div>
           </div>
@@ -30,7 +31,7 @@ const Services = () => {
                 </svg>
                 <i className="bi bi-person-walking"></i>
               </div>
-              <h4><a href="">Pickup</a></h4>
+              <h4><Link href="">Pickup</Link></h4>
               <p>Place your order ahead of time for a quick and convenient pickup</p>
             </div>
           </div>
@@ -43,7 +44,7 @@ const Services = () => {
                 </svg>
                 <i className="bi bi-shop"></i>
               </div>
-              <h4><a href="">In-store</a></h4>
+              <h4><Link href="">In-store</Link></h4>
               <p>Visit our store for a personalized shopping experience</p>
             </div>
           </div>
