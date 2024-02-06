@@ -1687,7 +1687,7 @@ section {
 
 #footer h1 {
   color: #225c92;
-  text-shadow: 0px 0px 3px rgba(255, 255, 255, .6)
+  text-shadow: 0px 0px 3px rgba(255, 255, 255)
 }
 
 #footer h3 {
@@ -1703,7 +1703,7 @@ section {
   padding: 0;
   margin: 0 0 40px 0;
   line-height: 3 0px;
-  text-shadow: 0 0 3px rgb(0, 0, 0, .6);
+  text-shadow: 0 0 3px rgb(0, 0, 0);
 }
 
 .la-info i {
@@ -1783,7 +1783,7 @@ section {
 
 #footer .la-info .phone-number,
 #footer .sfv-info .phone-number {
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.788);
+  text-shadow: 0 0 1px rgba(255, 255, 255);
 }
 
 #footer .bi,
@@ -1798,7 +1798,7 @@ section {
 
 #footer .disclaimer p {
   line-height: 20px;
-  text-shadow: 0 0 1px rgba(255, 255, 255, 0.596);
+  text-shadow: 0 0 1px rgba(255, 255, 255);
   font-weight: 600;
   color: black;
 }
