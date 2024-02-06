@@ -1,11 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop LA | BudzDeli</title>
+    <title>Shop LA</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <script src="https://labudzdeli.wm.store/static/js/embed.js"></script> 
+    <section id="shop-la" class="shop-la">
+        <div class="container" data-aos="fade-up">
+
+            <div class="section-title">
+                <h2>Los Angeles Menu</h2>
+                <script src="https://labudzdeli.wm.store/static/js/embed.js"></script>
+            </div>
+    </section>
 </body>
+
+<script>
+    function sendHeight() {
+        const height = document.documentElement.scrollHeight;
+        window.parent.postMessage({
+            frameHeight: height
+        }, '*');
+    }
+
+    // Call sendHeight on load and whenever the height might change
+    window.onload = sendHeight;
+    window.onresize = sendHeight;
+</script>
+
 </html>

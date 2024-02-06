@@ -10,8 +10,11 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Poppins';
   color: #272829;
+  background: url("../img/bg.jpg") center no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 a {
@@ -30,7 +33,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.home-main {
+  margin: 30px;
 }
 
 /*--------------------------------------------------------------
@@ -128,27 +135,27 @@ h6 {
 }
 
 .shop-button {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   /* Slightly larger font size */
-  font-weight: 900;
-  color: black;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-color: transparent;
+  font-weight: 700;
+  color: rgb(77, 77, 77);
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 50px;
+  background-color: rgb(255, 255, 255, .2);
   padding: 12px 24px;
   /* Slightly larger padding */
   margin: 20px;
   text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
-  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
   /* Shadow for depth */
 }
 
 .shop-button:hover {
-  background-color: black;
-  color: white;
+  background-color: rgba(148, 148, 148, 0.315);
+  color: rgb(0, 0, 0);
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
   /* Darker shadow on hover */
 }
@@ -177,6 +184,7 @@ h6 {
 .nav-menu {
   padding: 0;
   display: block;
+  z-index: 999;
 }
 
 .nav-menu * {
@@ -266,15 +274,16 @@ h6 {
   right: 10px;
   top: 10px;
   z-index: 9998;
-  border: 0;
-  background: none;
+  border: solid 1px rgba(255, 255, 255, 0.507);
+  background: rgba(0, 0, 0, 0.39);
   font-size: 28px;
   transition: all 0.4s;
   outline: none !important;
   line-height: 0;
   cursor: pointer;
-  border-radius: 50px;
+  border-radius: 10px;
   padding: 5px;
+  color: white;
 }
 
 .mobile-nav-toggle i {
@@ -297,23 +306,92 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
+
+
 #hero {
   width: 100%;
-  height: 100vh;
-  background: url("../img/home-bg.jpeg") center no-repeat;
+  height: auto;
+  background: url("../img/home-bg.jpg") center no-repeat;
   background-size: cover;
   position: relative;
+  padding: 85px 0px 200px 0px;
+  z-index: 1;
 }
 
-@media (min-width: 992px) {
-  #hero {
-    padding-left: 160px;
+.hero-shop-button {
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 18px 36px;
+  /* Default padding for larger screens */
+  margin: 20px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+  .hero-shop-button {
+    padding: 12px 24px;
+    /* Half the padding for mobile devices */
+    font-size: 15px;
   }
 }
 
+.hero-shop-button:hover {
+  background-color: rgba(85, 85, 85, 0.89);
+  color: white;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-image {
+  width: 100px;
+  border-radius: 50%;
+  box-shadow: 0px 0px 20px 16px rgba(0, 0, 0, .6);
+  background-color: rgba(0, 0, 0, 0.623);
+}
+
+.hero-image-container h3 {
+  margin: 0;
+  font-size: 120px;
+  font-weight: 900;
+  color: rgba(0, 0, 0);
+  text-shadow: -2px -2px 25px rgb(255, 255, 255);
+  letter-spacing: 13px;
+  font-family: 'Raleway', Courier, monospace;
+}
+
+
+@media (max-width: 992px) {
+  #hero {
+    text-align: center;
+    padding: 76px 0 120px 0px
+  }
+
+  #hero p {
+    margin: 20px;
+  }
+
+  #hero h3 {
+    font-size: 50px;
+  }
+}
+
+
 #hero:before {
   content: "";
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.2);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -321,8 +399,21 @@ h6 {
   right: 0;
 }
 
-#hero img {
-  max-width: 50%;
+.wmlogo img {
+  max-width: 200px;
+  height: auto;
+  box-shadow: 0px 0px 12px 3px rgba(0, 0, 0);
+  border-radius: 50%;
+
+}
+
+.bdlogo {
+  max-width: 200px;
+  height: auto;
+  text-shadow: 0 0 20px black;
+  box-shadow: 0px 0px 21px rgba(224, 224, 224, 0.514);
+  border-radius: 30px;
+  margin-bottom: -5px;
 }
 
 #hero h1 {
@@ -335,40 +426,55 @@ h6 {
 
 #hero p {
   color: #45505b;
-  margin: 20px 0px 0px 20px;
-  font-size: 26px;
+  font-size: 50px;
   font-family: "Poppins", sans-serif;
+  margin: 30px;
 }
 
 #hero p span {
-  color: #0563bb;
+  color: #ffffff;
+  text-shadow: 1px 1px black;
   letter-spacing: 1px;
+}
+
+#hero .hero-words .fade-in {
+  animation: fadeInOut 5s linear infinite;
+  display: inline-block;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
 
 #hero .social-links {
   margin-top: 30px;
 }
 
-#hero .social-links a {
-  font-size: 24px;
-  display: inline-block;
-  color: #45505b;
-  line-height: 1;
-  margin-right: 20px;
-  transition: 0.3s;
+#hero .shop-buttons {
+  margin-left: 38px;
 }
 
-#hero .social-links a:hover {
-  color: #0563bb;
+.logo-image {
+  margin: 30px;
 }
 
-#hero .typed {
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-  /* Shadow to make text stand out */
-  color: #fff;
-  /* Optional: change text color for better visibility */
-  font-weight: bold;
-  /* Optional: make text bolder */
+.wmlogo img {
+  min-width: 140px;
 }
 
 @media (max-width: 992px) {
@@ -382,9 +488,133 @@ h6 {
   }
 
   #hero p {
-    margin: 10px 0px 0px 0px;
-    font-size: 20px;
-    line-height: 24px;
+
+    font-size: 25px;
+    line-height: 10px;
+  }
+
+  .wmlogo img {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero img {
+    max-width: 160px;
+    height: auto;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Locations Menu
+--------------------------------------------------------------*/
+
+/* This ensures the locations are laid out with flexbox, but doesn't position them absolutely */
+.locations {
+  display: flex;
+  justify-content: center;
+  margin-top: -150px;
+  /* Pulls the location cards up to overlap the hero section */
+  z-index: 2;
+  /* Higher z-index so that it appears above the hero section */
+  /* Other styles remain unchanged */
+}
+
+/* This adjusts the location cards container */
+.location-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* If additional space is needed, adjust the padding of the hero section instead of using negative margin here */
+}
+
+/* This adjusts the individual location cards */
+.location-card {
+  display: flex;
+  margin: 20px 50px;
+  /* Adjust as necessary */
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 65px;
+  border-radius: 20px;
+  /* Ensures border radius is maintained */
+  width: 700px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Moves the card up; adjust the value as necessary */
+  background-clip: padding-box;
+  /* This ensures the background only applies within the border area */
+  z-index: 2;
+}
+
+.location-card>* {
+  display: flex;
+  margin: 10px;
+}
+
+.location-card>h3 {
+  font-size: 45px;
+  text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  line-height: 1.2;
+  text-align: center;
+}
+
+.location-card>p,
+.location-card>a {
+  font-size: 30px;
+  text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  line-height: 1.5;
+}
+
+.location-card-first {
+  background-image: url('../img/labg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  box-shadow: -4px 3px 13px 2px rgba(0, 0, 0, 0.3);
+}
+
+.location-card-second {
+  background-image: url('../img/sfvbg.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  box-shadow: -4px 3px 13px 2px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .locations {
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  .location-cards {
+    flex-direction: column;
+    margin-right: 10px;
+
+  }
+
+  .location-card {
+    min-width: auto;
+    width: 100%;
+    padding: 112px 113px;
+    margin: 5px;
+  }
+
+  .location-card>p,
+  .location-card>a {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .location-card {
+    padding: 50px 0;
+  }
+
+  .location-card h3 {
+    font-size: 25px;
   }
 }
 
@@ -392,7 +622,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 25px 0;
   overflow: hidden;
 }
 
@@ -417,21 +647,11 @@ section {
   display: block;
   width: 120px;
   height: 1px;
-  background: #ddd;
+  background: #0563bb;
   bottom: 1px;
   left: calc(50% - 60px);
 }
 
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #0563bb;
-  bottom: 0;
-  left: calc(50% - 20px);
-}
 
 .section-title p {
   margin-bottom: 0;
@@ -491,14 +711,15 @@ section {
 }
 
 #about p {
-  font-size: 16px;
+  font-size: 20px;
   /* Adjusts the font size for readability */
-  line-height: 1.6;
+  line-height: 1.8;
   /* Improves line spacing */
   margin-bottom: 15px;
   /* Adds space between paragraphs */
   color: #333;
   /* Darker text for better readability */
+  font-weight: 600;
 }
 
 /* Responsive Image Styling */
@@ -522,8 +743,198 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Offers Banner
+--------------------------------------------------------------*/
+
+.offers-banner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  position: relative;
+  /* Ensure this container is positioned to act as a reference for absolute positioning */
+  overflow: visible;
+}
+
+.offers-banner {
+  display: flex;
+  flex-direction: row;
+  max-width: 1500px;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  border-radius: 30px;
+  box-shadow: -8px 17px 17px 3px rgba(0, 0, 0, 0.1296);
+  position: relative;
+  z-index: 10;
+}
+
+.offers-banner-container {
+  overflow: visible;
+}
+
+.left-offers {
+  flex: 1;
+  text-align: left;
+  padding: 50px;
+}
+
+.left-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.left-content h2 {
+  color: rgba(0, 0, 107, 0.753);
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.left-content p {
+  font-weight: 600;
+}
+
+.offers-banner-button a {
+  background-color: rgba(43, 43, 43, 0.979);
+}
+
+.right-offers {
+  flex: 1;
+  display: flex;
+  background-image: url('/img/img1.jpg');
+  background-size: cover;
+  background-position: center;
+
+}
+
+@media (min-width: 1281px) {
+  .right-offers {
+    min-width: 800px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+  .right-offers {
+    display: flex;
+    border-radius: 30px;
+    border-radius: 0px 31px 30px 0px;
+
+  }
+
+  .left-content {
+    line-height: 45px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .right-offers {
+    min-width: 700;
+  }
+}
+
+@media (max-width: 768px) {
+  .offers-banner {
+    position: relative;
+    /* Enable positioning for pseudo-element */
+    padding: 0;
+    background-image: url('/img/img1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    /* Ensure this is positioned under the content */
+  }
+
+  .offers-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Black fade effect, adjust opacity as needed */
+    z-index: -1;
+    /* Position the overlay under the content */
+  }
+
+  /* Ensure content inside .offers-banner is positioned above the pseudo-element */
+  .offers-banner>* {
+    position: relative;
+    z-index: 2;
+  }
+
+  .left-content h2 {
+    font-size: 20px;
+    margin: 35px 0;
+    color: white;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  }
+
+  .left-content p {
+    font-size: 15px;
+    color: white;
+    text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
+  }
+
+  .right-offers {
+    display: none;
+  }
+
+  .offers-banner-container {
+    margin: 2px;
+    /* Decrease margin for smaller screens */
+  }
+}
+
+.img-fluid {
+  max-width: 100%;
+  max-height: 100%;
+  /* Adjust the max-height to match the increased container height */
+  object-fit: cover;
+}
+
+
+/*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
+.highlighted-container {
+  text-align: center;
+  /* Centers the text block */
+  margin-top: 20px;
+  /* Removes default margin */
+  margin-bottom: 40px;
+  padding: 20px 0;
+  /* Adds some vertical padding */
+}
+
+.highlighted-text {
+  font-size: 55px;
+  /* Adjust the font size as needed */
+  color: #333;
+  /* Your preferred text color */
+  font-family: 'Poppins', sans-serif;
+  /* Poppins font for the regular text */
+  margin: 0;
+  /* Adjust as needed */
+  padding: 0;
+  /* Adjust as needed */
+  display: inline-block;
+  /* Allows the text shadow to be applied properly */
+}
+
+.emphasis {
+  font-weight: 700;
+  /* Bold font weight for emphasis */
+  color: #FFD700;
+  /* Gold color for emphasis */
+  font-family: 'Dancing Script', cursive;
+  /* Dancing Script for the emphasized text */
+  text-shadow: 2px 2px 4px rgba(165, 42, 42, 0.7);
+  /* Shadow effect for the emphasized text */
+}
+
+
 .portfolio .portfolio-item {
   margin-bottom: 30px;
 }
@@ -534,7 +945,6 @@ section {
   list-style: none;
   text-align: center;
   background: #fff;
-  border-radius: 50px;
   padding: 2px 15px;
 }
 
@@ -566,6 +976,8 @@ section {
   overflow: hidden;
   z-index: 1;
   background: rgba(69, 80, 91, 0.8);
+  border-radius: 10px;
+
 }
 
 .portfolio .portfolio-wrap::before {
@@ -595,34 +1007,12 @@ section {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 0 9px 1px white inset;
+  ;
 }
 
-.portfolio .portfolio-wrap .portfolio-info::before {
-  display: block;
-  content: "";
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  top: 35px;
-  left: 35px;
-  border-top: 3px solid #d7dce1;
-  border-left: 3px solid #d7dce1;
-  transition: all 0.5s ease 0s;
-  z-index: 9994;
-}
-
-.portfolio .portfolio-wrap .portfolio-info::after {
-  display: block;
-  content: "";
-  width: 48px;
-  height: 48px;
-  position: absolute;
-  bottom: 35px;
-  right: 35px;
-  border-bottom: 3px solid #d7dce1;
-  border-right: 3px solid #d7dce1;
-  transition: all 0.5s ease 0s;
-  z-index: 9994;
+.portfolio .portfolio-wrap .portfolio-info img {
+  margin-top: 22px;
 }
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
@@ -676,6 +1066,56 @@ section {
 .portfolio .portfolio-wrap:hover .portfolio-info::after {
   bottom: 15px;
   right: 15px;
+}
+
+/* Portfolio Image Overlay Styles */
+.portfolio .portfolio-wrap .portfolio-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  /* Title color */
+  background: rgba(0, 0, 0, 0.4);
+  /* Semi-transparent background */
+  opacity: 1;
+  /* Fully visible */
+  transition: opacity 0.3s ease-in-out;
+}
+
+.portfolio .portfolio-wrap:hover .portfolio-info {
+  opacity: 0;
+  /* Hide on hover */
+}
+
+/* Adjust the title inside the overlay */
+.portfolio .portfolio-wrap .portfolio-info h4 {
+  color: #fff;
+  transition: color 0.3s ease-in-out;
+  font-size: 40px;
+  text-shadow: 0px 1px 10px rgba(0, 0, 0, 1)
+}
+
+@media (max-width: 768px) {
+  .portfolio .portfolio-wrap .portfolio-info {
+    padding: 10px;
+  }
+
+  .portfolio .portfolio-wrap .portfolio-info h4 {
+    font-size: 30px;
+  }
+
+  .highlighted-text {
+    font-size: 30px;
+  }
+
+  .portfolio .portfolio-wrap {
+    height: 330px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -743,6 +1183,60 @@ section {
   padding: 0;
 }
 
+/* Style for shop buttons inside portfolio items */
+.portfolio .portfolio-wrap .portfolio-shop-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+  /* Adjust z-index if needed */
+}
+
+/* Show the buttons on hover */
+.portfolio .portfolio-wrap:hover .portfolio-shop-buttons {
+  opacity: 1;
+}
+
+/* Style adjustments for the shop buttons */
+.portfolio .portfolio-wrap .shop-button {
+  margin-bottom: 10px;
+  /* Space between buttons */
+  min-width: 140px;
+}
+
+/* Update the height of the portfolio items */
+.portfolio .portfolio-item {
+  margin-bottom: 30px;
+  height: auto;
+  text-align: center;
+  /* Remove fixed height */
+}
+
+/* Style the inner container to control the height of background images */
+.portfolio .portfolio-wrap .portfolio-inner {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  /* Adjust the desired height */
+  border-radius: 10px;
+}
+
+/* Update the background image styles */
+.portfolio .portfolio-wrap .portfolio-inner img {
+  object-fit: cover;
+  width: auto;
+  height: 470px;
+}
+
+
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
@@ -751,7 +1245,7 @@ section {
   padding: 70px 20px 80px 20px;
   transition: all ease-in-out 0.3s;
   background: #fff;
-  box-shadow: 0px 5px 90px 0px rgba(110, 123, 131, 0.05);
+  box-shadow: -6px 5px 9px 2px rgba(110, 123, 131, 0.3);
 }
 
 .services .icon-box .icon {
@@ -876,11 +1370,22 @@ section {
   fill: #11dbcf;
 }
 
+.services p {
+  font-weight: 600
+}
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
 .testimonials .section-header {
   margin-bottom: 40px;
+}
+
+.testimonials-main {
+  background-color: rgba(255, 255, 255, 0.76);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: -4px 3px 13px 2px rgba(0, 0, 0, 0.2);
 }
 
 .testimonials .testimonials-carousel,
@@ -936,6 +1441,7 @@ section {
   margin: 0 auto 15px auto;
 }
 
+
 .testimonials .swiper-pagination {
   margin-top: 20px;
   position: relative;
@@ -953,9 +1459,75 @@ section {
   background-color: #0563bb;
 }
 
+.review-button-container {
+  text-align: center;
+  /* This centers the button container */
+}
+
+.review-button {
+  display: inline-flex;
+  /* Changed to inline-flex for vertical alignment */
+  align-items: center;
+  /* Aligns items vertically in the center */
+  justify-content: center;
+  /* Centers content horizontally */
+  padding: 10px 20px;
+  /* Adjust padding as needed */
+  border: 2px solid #000;
+  /* Replace with the color of your choice */
+  border-radius: 50px;
+  /* Adjust to match your design */
+  background-color: transparent;
+  color: #000;
+  /* Replace with the color of your choice */
+  text-decoration: none;
+  /* Removes underline from the link */
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+  /* Smooth transition for hover effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Adds a subtle shadow */
+  cursor: pointer;
+  /* Changes the cursor to indicate the button is clickable */
+  white-space: nowrap;
+  /* Prevents wrapping and keeps the button one line */
+}
+
+.review-button:hover {
+  background-color: #000;
+  /* Color when hovering */
+  color: #fff;
+  /* Text color when hovering */
+}
+
+.review-button-container i {
+  margin-right: 8px;
+  /* Space between icon and text */
+  /* Add additional icon styling as necessary */
+  font-size: 50px;
+}
+
+
 @media (min-width: 992px) {
   .testimonials .testimonial-item p {
     width: 80%;
+  }
+}
+
+@media (max-width: 768px) {
+  .review-button {
+    padding: 8px 16px;
+    /* Smaller padding */
+    font-size: 14px;
+    /* Smaller font size */
+    /* If you have an icon, you may also want to scale it down */
+  }
+
+  .review-button-container i {
+    margin-right: 8px;
+    /* Space between icon and text */
+    /* Add additional icon styling as necessary */
+    font-size: 30px;
   }
 }
 
@@ -1019,7 +1591,7 @@ section {
 
 .contact-card {
   background: #fff;
-  padding: 20px;
+  padding: 30px;
   margin-bottom: 20px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -1028,8 +1600,19 @@ section {
   justify-content: space-between;
   /* This ensures the content is spaced evenly */
   height: 100%;
-  /* This makes sure all cards stretch to the full height of their parent */
+  line-height: 40px;
+  text-align: center;
 }
+
+.contact-card h5 {
+  font-weight: 800;
+  color: rgba(30, 30, 168, 0.938);
+}
+
+.contact-card p {
+  font-weight: 600;
+}
+
 
 @keyframes animate-loading {
   0% {
@@ -1042,14 +1625,69 @@ section {
 }
 
 /*--------------------------------------------------------------
+# Offers
+--------------------------------------------------------------*/
+.offers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+#offers .section-title {
+  text-align: center;
+}
+
+#offers .image-container {
+  text-align: center;
+}
+
+#offers .image-container img {
+  max-width: 75%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.animated-image {
+  opacity: 0;
+  animation: fadeInAnimation ease 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  #offers .image-container img {
+    max-width: 100%;
+  }
+}
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #f7f8f9;
-  color: #45505b;
+  background: rgba(124, 124, 124, 0.726);
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 2px black;
   font-size: 14px;
   text-align: center;
   padding: 30px 0;
+}
+
+#footer h1 {
+  color: #225c92;
+  text-shadow: 0px 0px 3px rgba(255, 255, 255, .6)
 }
 
 #footer h3 {
@@ -1062,10 +1700,10 @@ section {
 }
 
 #footer p {
-  font-style: italic;
   padding: 0;
   margin: 0 0 40px 0;
-  line-height: 40px;
+  line-height: 3 0px;
+  text-shadow: 0 0 3px rgb(0, 0, 0, .6);
 }
 
 .la-info i {
@@ -1083,7 +1721,7 @@ section {
   background: #0563bb;
   color: #fff;
   line-height: 1;
-  padding: 5px;
+  padding: 6px;
   margin-right: 4px;
   border-radius: 50%;
   text-align: center;
@@ -1096,6 +1734,10 @@ section {
   background: #0678e3;
   color: #fff;
   text-decoration: none;
+}
+
+#footer .social-links i {
+  padding: 1px 0px 0px .5px;
 }
 
 #footer .copyright {
@@ -1125,7 +1767,23 @@ section {
 #footer .sfv-info,
 #footer .quick-links {
   font-size: 18px;
-  /* Increase font size for address and phone number */
+  font-weight: 600;
+}
+
+#footer .la-info .address,
+#footer .sfv-info .address {
+  color: black;
+  text-shadow: 0 0 3px rgb(0, 0, 0);
+}
+
+#footer .la-info .bi-telephone a,
+#footer .sfv-info .bi-telephone a {
+  text-shadow: 0 0 0;
+}
+
+#footer .la-info .phone-number,
+#footer .sfv-info .phone-number {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.788);
 }
 
 #footer .bi,
@@ -1135,6 +1793,14 @@ section {
   /* Increase icon size */
   margin-right: 10px;
   /* Adjust spacing between icon and text */
+  text-shadow: 0 0 3px rgb(0, 0, 0);
+}
+
+#footer .disclaimer p {
+  line-height: 20px;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.596);
+  font-weight: 600;
+  color: black;
 }
 
 /* Responsive Design for Footer */
@@ -1158,6 +1824,11 @@ section {
   font-size: 20px;
 }
 
-.quick-links a {
-  margin: 15px 0px 0px 0px
+.quick-links>a {
+  margin: 15px 0px 0px 0px;
+  text-shadow: 0 0 3px rgba(255, 255, 255, .5);
 }
+
+/*--------------------------------------------------------------
+# Background
+--------------------------------------------------------------*/

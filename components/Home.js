@@ -3,14 +3,20 @@ import Hero from './Hero';
 import Portfolio from './Portfolio';
 import Services from './Services'
 import Testimonials from './Testimonials'
+import Locations from './Locations';
+import OffersBanner from './OffersBanner';
 
 function Home() {
     return (
         <main>
-        <Hero />
-        <Portfolio />
-        <Services />
-        <Testimonials />
+            <Hero />
+            <div className='home-main'>
+                <Locations />
+                <OffersBanner />
+                <Portfolio />
+                <Services />
+                <Testimonials />
+            </div>
         </main>
     );
 }

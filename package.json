@@ -17,10 +17,11 @@
     "isotope-layout": "^3.0.6",
     "next": "14.1.0",
     "pagination": "^0.4.6",
+    "pure_counter": "^0.1.8",
     "react": "^18",
     "react-dom": "^18",
+    "sharp": "^0.33.2",
     "swiper": "^11.0.5",
-    "typed": "^10.0.0-beta.2",
     "typed.js": "^2.1.0",
     "waypoints": "^4.0.1"
   },

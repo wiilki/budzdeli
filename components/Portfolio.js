@@ -1,52 +1,70 @@
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
 
 const Portfolio = () => {
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container" data-aos="fade-up">
-        <div className="section-title">
-          <h2>Products</h2>
-        </div>
+    <div className="highlighted-container">
+      <div className="highlighted-text">
+        Featuring a <span className="emphasis">wide selection</span> of products for <span className="emphasis">delivery</span>!
+      </div>
+    </div>
 
         <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-          <div className="col-lg-4 col-md-6 portfolio-item">
+          {/* Portfolio Item 1 */}
+          <div className="col-lg-4 col-md-12 portfolio-item">
             <div className="portfolio-wrap">
-              <img src="/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="" />
+              <div className="portfolio-inner">
+                <Image src="/img/portfolio/portfolio-1.jpg" className="img-fluid" alt="portfolio1" width={416} height={600} />
+              </div>
               <div className="portfolio-info">
-                <h4>Flowers</h4>
-                <div className="portfolio-links">
-                  <a href="/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
-                </div>
+                <h4>Shop Flowers</h4>
+                <Image src="/img/whitelogo.png" className="img-fluid" alt="whitelogo" width={300} height={77} />
+              </div>
+              <div className="shop-buttons portfolio-shop-buttons">
+                <Link href="/shopla" className="shop-button">Shop LA</Link>
+                <Link href="/shopsfv" className="shop-button">Shop SFV</Link>
               </div>
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6 portfolio-item">
+          {/* Portfolio Item 2 */}
+          <div className="col-lg-4 col-md-12 portfolio-item">
             <div className="portfolio-wrap">
-              <img src="/img/portfolio/portfolio-2.jpg" className="img-fluid" alt="" />
+              <div className="portfolio-inner">
+                <Image src="/img/portfolio/portfolio-2.jpg" className="img-fluid" alt="portfolio2" width={416} height={600} />
+              </div>
               <div className="portfolio-info">
-                <h4>Edibles</h4>
-                <div className="portfolio-links">
-                  <a href="/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
-                </div>
+                <h4>Shop Edibles</h4>
+                <Image src="/img/whitelogo.png" className="img-fluid" alt="whitelogo" width={300} height={77} />
+              </div>
+              <div className="shop-buttons portfolio-shop-buttons">
+                <Link href="/shopla" className="shop-button">Shop LA</Link>
+                <Link href="/shopsfv" className="shop-button">Shop SFV</Link>
               </div>
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6 portfolio-item">
+          {/* Portfolio Item 3 */}
+          <div className="col-lg-4 col-md-12 portfolio-item">
             <div className="portfolio-wrap">
-              <img src="/img/portfolio/portfolio-3.jpg" className="img-fluid" alt="" />
+              <div className="portfolio-inner">
+                <Image src="/img/portfolio/portfolio-3.jpg" className="img-fluid" alt="portfolio3" width={416} height={600} />
+              </div>
               <div className="portfolio-info">
-                <h4>Concentrates</h4>
-                <div className="portfolio-links">
-                  <a href="/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2"><i className="bx bx-plus"></i></a>
-                  <a href="portfolio-details.html" className="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i className="bx bx-link"></i></a>
-                </div>
+                <h4>Shop Concentrates</h4>
+                <Image src="/img/whitelogo.png" className="img-fluid" alt="whitelogo" width={300} height={77} />
+              </div>
+              <div className="shop-buttons portfolio-shop-buttons">
+                <Link href="/shopla" className="shop-button">Shop LA</Link>
+                <Link href="/shopsfv" className="shop-button">Shop SFV</Link>
               </div>
             </div>
           </div>
+
+          {/* Add more portfolio items as needed */}
         </div>
       </div>
     </section>

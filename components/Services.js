@@ -18,7 +18,7 @@ const Services = () => {
                 </svg>
                 <i className="bi bi-car-front"></i>
               </div>
-              <h4><Link href="">Delivery</Link></h4>
+              <h4>Delivery</h4>
               <p>We offer delivery services to multiple areas in both Los Angeles (LA) and San Fernando Valley (SFV)</p>
             </div>
           </div>
@@ -31,7 +31,7 @@ const Services = () => {
                 </svg>
                 <i className="bi bi-person-walking"></i>
               </div>
-              <h4><Link href="">Pickup</Link></h4>
+              <h4>Pickup</h4>
               <p>Place your order ahead of time for a quick and convenient pickup</p>
             </div>
           </div>
@@ -44,7 +44,7 @@ const Services = () => {
                 </svg>
                 <i className="bi bi-shop"></i>
               </div>
-              <h4><Link href="">In-store</Link></h4>
+              <h4>In-store</h4>
               <p>Visit our store for a personalized shopping experience</p>
             </div>
           </div>

@@ -2,19 +2,20 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
+import Head from 'next/head';
 
 const ContactPage = () => {
     return (
         <div>
-              <i className="bi bi-list mobile-nav-toggle d-lg-none"></i>
+            <Head>
+                <title>Contact Us | BudzDeli</title>
+                <meta name="description" content="Dependable Weed Delivery" />
+            </Head>
             <Header />
             <main>
                 <Contact />
             </main>
             <Footer />
-            <div id="preloader"></div>
-            <a href="#" className="back-to-top d-flex align-items-center justify-content-center"><i
-                className="bi bi-arrow-up-short"></i></a>
         </div>
     );
 };
