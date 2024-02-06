@@ -510,61 +510,55 @@ h6 {
 # Locations Menu
 --------------------------------------------------------------*/
 
-/* This ensures the locations are laid out with flexbox, but doesn't position them absolutely */
+/* Base styles for locations */
 .locations {
   display: flex;
   justify-content: center;
+  align-items: center;
+  /* Ensure alignment is centered for all screen sizes */
   margin-top: -150px;
-  /* Pulls the location cards up to overlap the hero section */
   z-index: 2;
-  /* Higher z-index so that it appears above the hero section */
-  /* Other styles remain unchanged */
 }
 
-/* This adjusts the location cards container */
+/* Flex container for location cards */
 .location-cards {
   display: flex;
   flex-direction: row;
+  /* Default to row, but will change based on media query */
   flex-wrap: wrap;
+  /* Allows items to wrap as needed */
   justify-content: center;
-  /* If additional space is needed, adjust the padding of the hero section instead of using negative margin here */
+  width: 100%;
+  /* Ensures the container takes up full width */
 }
 
-/* This adjusts the individual location cards */
+/* Styles for each location card */
 .location-card {
-  display: flex;
-  margin: 20px 50px;
-  /* Adjust as necessary */
+  flex-basis: calc(50% - 30px);
+  /* Adjust the width minus margin for 2 cards side by side */
+  margin: 15px;
+  /* Half of the desired gap between cards */
   align-items: center;
   flex-direction: column;
-  padding: 50px 65px;
+  padding: 20px;
+  /* Adjust padding as needed */
   border-radius: 20px;
-  /* Ensures border radius is maintained */
-  width: 700px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Moves the card up; adjust the value as necessary */
   background-clip: padding-box;
-  /* This ensures the background only applies within the border area */
   z-index: 2;
+  display: flex;
 }
 
 .location-card>* {
-  display: flex;
   margin: 10px;
 }
 
-.location-card>h3 {
-  font-size: 45px;
-  text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
-  line-height: 1.2;
-  text-align: center;
-}
-
+.location-card>h3,
 .location-card>p,
 .location-card>a {
-  font-size: 30px;
-  text-shadow: 0px 1px 10px rgba(0, 0, 0, 1);
-  line-height: 1.5;
+  color: white;
+  text-align: center;
+  text-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
 }
 
 .location-card-first {
@@ -573,6 +567,8 @@ h6 {
   background-position: center;
   color: white;
   box-shadow: -4px 3px 13px 2px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  padding: 70px;
 }
 
 .location-card-second {
@@ -581,9 +577,11 @@ h6 {
   background-position: center;
   color: white;
   box-shadow: -4px 3px 13px 2px rgba(0, 0, 0, 0.3);
+  max-width: 700px;
+  padding: 70px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 820px) {
   .locations {
     align-items: center;
     border-radius: 20px;
@@ -591,15 +589,16 @@ h6 {
 
   .location-cards {
     flex-direction: column;
-    margin-right: 10px;
-
+    /* Stack cards vertically */
   }
 
   .location-card {
-    min-width: auto;
     width: 100%;
-    padding: 112px 113px;
-    margin: 5px;
+    /* Each card takes full container width */
+    padding: 50px 0;
+    /* Adjust padding for smaller screens */
+    margin: 10px 0;
+    /* Adjust margin for vertical stacking */
   }
 
   .location-card>p,
@@ -609,12 +608,20 @@ h6 {
 }
 
 @media (max-width: 767px) {
-  .location-card {
-    padding: 50px 0;
-  }
-
   .location-card h3 {
     font-size: 25px;
+    /* Adjust font size for smaller screens */
+  }
+
+  .location-card {
+    padding: 30px 20px;
+    /* Further adjust padding for very small screens */
+  }
+
+  .location-card>p,
+  .location-card>a {
+    font-size: 15px;
+    /* Adjust font size for text elements */
   }
 }
 
@@ -889,7 +896,6 @@ section {
 
 .img-fluid {
   max-width: 100%;
-  max-height: 100%;
   /* Adjust the max-height to match the increased container height */
   object-fit: cover;
 }
@@ -903,7 +909,6 @@ section {
   /* Centers the text block */
   margin-top: 20px;
   /* Removes default margin */
-  margin-bottom: 40px;
   padding: 20px 0;
   /* Adds some vertical padding */
 }
@@ -924,16 +929,14 @@ section {
 }
 
 .emphasis {
-  font-weight: 700;
   /* Bold font weight for emphasis */
-  color: #FFD700;
+  color: #ffd900da;
   /* Gold color for emphasis */
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Protest Riot';
   /* Dancing Script for the emphasized text */
   text-shadow: 2px 2px 4px rgba(165, 42, 42, 0.7);
   /* Shadow effect for the emphasized text */
 }
-
 
 .portfolio .portfolio-item {
   margin-bottom: 30px;
@@ -1240,12 +1243,43 @@ section {
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/
+/* Centering items in a flex container */
+.services .row {
+  display: flex;
+  justify-content: center;
+  /* Center flex items on the line */
+  flex-wrap: wrap;
+  /* Allow items to wrap as needed */
+}
+
+/* Ensuring equal widths and flexible heights for the service boxes */
+.services .col-lg-4.col-md-6.d-flex.align-items-stretch {
+  flex: 0 1 33%;
+  /* Adjust the flex-basis percentage based on how many items per row you desire */
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  /* Stretch items to fill the container */
+  padding: 20px;
+}
+
+/* Ensuring equal height and managing content overflow */
 .services .icon-box {
   text-align: center;
-  padding: 70px 20px 80px 20px;
+  height: auto;
+  /* Adjust based on your content, or use min-height for a dynamic approach */
+  overflow: hidden;
+  /* Ensures content does not overflow the box */
+  display: flex;
+  flex-direction: column;
+  /* Stack content vertically */
+  justify-content: center;
+  /* Center content vertically */
   transition: all ease-in-out 0.3s;
   background: #fff;
   box-shadow: -6px 5px 9px 2px rgba(110, 123, 131, 0.3);
+  min-width: 300px;
+  padding: 20px;
 }
 
 .services .icon-box .icon {

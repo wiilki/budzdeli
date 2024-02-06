@@ -9,14 +9,14 @@ function Locations() {
                     <h3>Los Angeles</h3>
                     <Image src="/img/whitelogo.png" alt="White Logo" className="store-logo" width={300} height={77}/>
                     <p>BudzDeli LA</p>
-                    <p>(323) 866-0572</p>
+                   <a href="tel:+13238660572">(323) 866-0572</a>
                     <Link href="/shopla" className="hero-shop-button">Order Here</Link>
                 </div>
                 <div className="location-card location-card-second">
                     <h3>San Fernando Valley</h3>
                     <Image src="/img/whitelogo.png" alt="White Logo" className="store-logo" width={300} height={77}/>
                     <p>BudzDeli SFV</p>
-                    <p>(818) 717-7742</p>
+                    <a href="tel:+18187177742">(818) 717-7742</a>
                     <Link href="/shopsfv" className="hero-shop-button">Order Here</Link>
                 </div>
             </div>

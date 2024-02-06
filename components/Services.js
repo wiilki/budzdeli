@@ -1,13 +1,16 @@
 import React from 'react';
-import Link from 'next/link';
 
 const Services = () => {
   return (
     <section id="services" className="services">
       <div className="container" data-aos="fade-up">
         <div className="section-title">
-          <h2>Services</h2>
-          <p>Whether you&apos;re looking for delivery, quick pickup options, or an in-store shopping experience, we&apos;ve got you covered.</p>
+          <div className="highlighted-container">
+            <div className="highlighted-text">
+
+            Offering <span className="emphasis">delivery</span>, fast  <span className="emphasis">pickup</span> options, or <span className="emphasis">in-store</span> shopping!
+            </div>
+          </div>
         </div>
         <div className="row">
           <div className="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">

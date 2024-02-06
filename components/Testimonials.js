@@ -23,10 +23,11 @@ function Testimonials() {
           <Swiper
             className="testimonials-slider"
             data-aos="fade-up"
-            data-aos-delay="500"
+            data-aos-delay="400"
             pagination={{
               clickable: true,
             }}
+            autoHeight={true} // Enable autoHeight feature
           >
             <SwiperSlide>
               <div className="testimonial-item">

@@ -6,11 +6,12 @@ const Portfolio = () => {
   return (
     <section id="portfolio" className="portfolio section-bg">
       <div className="container" data-aos="fade-up">
-    <div className="highlighted-container">
-      <div className="highlighted-text">
-        Featuring a <span className="emphasis">wide selection</span> of products for <span className="emphasis">delivery</span>!
-      </div>
-    </div>
+        <div className="highlighted-container">
+          <div className="highlighted-text">
+
+          Providing a <span className="emphasis">huge variety</span> of products available for <span className="emphasis">delivery</span>!
+          </div>
+        </div>
 
         <div className="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
           {/* Portfolio Item 1 */}

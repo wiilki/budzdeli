@@ -14,20 +14,21 @@ function Contact() {
                             5067 W Washington Blvd<br />
                             Los Angeles, CA 90016<br />
                             <a href="tel:+13238660572">(323) 866-0572</a><br />
-                            <a href="mailto:labudzdeli@gmail.com">labudzdeli@gmail.com</a>
+                            <a href="mailto:labudzdeli@gmail.com">labudzdeli@gmail.com</a><br />
+                            Open 9AM-9:30PM, 7 days/week
                         </p>
                     </div>
                 </div>
 
                 <div className="col-md-4 contact-card-wrapper">
                     <div className="contact-card">
-                        <h5>BudzDeli SFV</h5>
+                        <h5>BudzDeli SFV (Delivery Only)</h5>
                         <p>
-                            Delivery Only:<br />
                             16770 Stagg Street<br />
                             Los Angeles, CA 91406<br />
                             <a href="tel:+18187177742">(818) 717-7742</a><br />
-                            <a href="mailto:sfvbudzdeli@gmail.com">sfvbudzdeli@gmail.com</a>
+                            <a href="mailto:sfvbudzdeli@gmail.com">sfvbudzdeli@gmail.com</a><br />
+                            Open 9AM-9PM, 7 days/week
                         </p>
                     </div>
                 </div>
@@ -39,7 +40,8 @@ function Contact() {
                             5067 W Washington Blvd<br />
                             Los Angeles, CA 90016<br />
                             <a href="tel:+13232973224">(323) 297-3224</a><br />
-                            <a href="mailto:royalgreensla@gmail.com">royalgreensla@gmail.com</a>
+                            <a href="mailto:royalgreensla@gmail.com">royalgreensla@gmail.com</a><br />
+                            Open 9AM-9:30PM, 7 days/week
                         </p>
                     </div>
                 </div>
