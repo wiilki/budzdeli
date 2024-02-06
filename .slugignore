@@ -1,0 +1,6 @@
+# .slugignore
+node_modules/
+test/
+docs/
+*.psd
+*.pdf
