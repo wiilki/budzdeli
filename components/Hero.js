@@ -17,7 +17,9 @@ function Hero() {
     return (
         <section id="hero" className="d-flex flex-column justify-content-center">
             <div className="hero-image-container" data-aos="zoom-in" data-aos-delay="100">
-                <Image src="/img/logo.png" alt="headinglogo" width={850} height={358} className='bdlogo'/>
+                <div className="bdlogo-wrapper">
+                    <Image src="/img/design.png" alt="headinglogo" width={850} height={358} className='bdlogo' />
+                </div>
                 <h3>BUDZDELI</h3>
                 <p className="hero-words">
                     <span className="fade-in">{words[currentWord]}</span>
