@@ -1,24 +1,15 @@
-import React from 'react';
+import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Home from '../components/Home';
-import Head from 'next/head';
 
-const HomePage = () => {
-    return (
-        <>
-            <Head>
-                <title>Dependable Weed Delivery | BudzDeli</title>
-                <meta name="description" content="Dependable Weed Delivery" />
-            </Head>
-            <Header />
-            <main>
-                <Home />
-            </main>
-            <Footer />
-
-        </>
-    );
-};
-
-export default HomePage;
+export default function HomePage() {
+  return (
+    <>
+      <Head><title>BudzDeli | Los Angeles Cannabis Delivery & Pickup</title><meta name="description" content="Local cannabis delivery in Los Angeles and the San Fernando Valley, plus LA pickup. Explore BudzDeli's neighborhoods, offers and service options. Adults 21+." /></Head>
+      <Header />
+      <main id="main-content"><Home /></main>
+      <Footer />
+    </>
+  );
+}

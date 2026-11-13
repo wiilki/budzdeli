@@ -1,23 +1,14 @@
-import React from 'react';
+import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Shopsfv from '../components/Shopsfv';
-import Head from 'next/head';
 
-const ShopsfvPage = () => {
-    return (
-        <div>
-            <Head>
-                <title>Shop SFV | BudzDeli</title>
-                <meta name="description" content="Dependable Weed Delivery" />
-            </Head>
-            <Header />
-            <main>
-                <Shopsfv />
-            </main>
-            <Footer />
-        </div>
-    );
-};
-
-export default ShopsfvPage;
+export default function ShopSanFernandoValley() {
+  return (
+    <>
+      <Head><title>Shop San Fernando Valley | BudzDeli</title><meta name="description" content="BudzDeli San Fernando Valley shopping page." /></Head>
+      <Header />
+      <main id="main-content" className="shop-blank" aria-label="San Fernando Valley shop" />
+      <Footer />
+    </>
+  );
+}

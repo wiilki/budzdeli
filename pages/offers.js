@@ -1,23 +1,15 @@
-import React from 'react';
+import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Offers from '../components/Offers';
-import Head from 'next/head';
 
-const OffersPage = () => {
-    return (
-        <div>
-            <Head>
-                <title>Offers | BudzDeli</title>
-                <meta name="description" content="Dependable Weed Delivery" />
-            </Head>
-            <Header />
-            <main>
-                <Offers />
-            </main>
-            <Footer />
-        </div>
-    );
-};
-
-export default OffersPage;
+export default function OffersPage() {
+  return (
+    <>
+      <Head><title>Offers | BudzDeli</title><meta name="description" content="Learn about BudzDeli delivery offers and contact our local teams for current specials. Adults 21+." /></Head>
+      <Header />
+      <main id="main-content"><Offers /></main>
+      <Footer />
+    </>
+  );
+}

@@ -1,151 +1,62 @@
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const Header = () => {
-    const router = useRouter();
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/about', label: 'Our story' },
+  { href: '/offers', label: 'Offers' },
+  { href: '/contact', label: 'Contact' },
+];
 
-    useEffect(() => {
-        const select = (el, all = false) => {
-            el = el.trim();
-            if (all) {
-                return [...document.querySelectorAll(el)];
-            } else {
-                return document.querySelector(el);
-            }
-        };
+export default function Header() {
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
-        const on = (type, el, listener, all = false) => {
-            let selectEl = select(el, all);
-            if (selectEl) {
-                if (all) {
-                    selectEl.forEach((e) => e.addEventListener(type, listener));
-                } else {
-                    selectEl.addEventListener(type, listener);
-                }
-            }
-        };
+  useEffect(() => {
+    const close = () => setMenuOpen(false);
+    router.events.on('routeChangeStart', close);
+    return () => router.events.off('routeChangeStart', close);
+  }, [router.events]);
 
-        const onscroll = (el, listener) => {
-            el.addEventListener('scroll', listener);
-        };
-
-        const navbarlinksActive = () => {
-            let position = window.scrollY + 200;
-            let navbarlinks = select('#navbar .scrollto', true);
-            navbarlinks.forEach((navbarlink) => {
-                if (!navbarlink.hash) return;
-                let section = select(navbarlink.hash);
-                if (!section) return;
-                if (position >= section.offsetTop && position <= section.offsetTop + section.offsetHeight) {
-                    navbarlink.classList.add('active');
-                } else {
-                    navbarlink.classList.remove('active');
-                }
-            });
-        };
-
-        const scrollto = (el) => {
-            let elementPos = select(el).offsetTop;
-            window.scrollTo({
-                top: elementPos,
-                behavior: 'smooth',
-            });
-        };
-
-        const toggleBacktotop = () => {
-            let backtotop = select('.back-to-top');
-            if (backtotop) {
-                if (window.scrollY > 100) {
-                    backtotop.classList.add('active');
-                } else {
-                    backtotop.classList.remove('active');
-                }
-            }
-        };
-
-        const closeMobileNav = () => {
-            let body = select('body');
-            let navbarToggle = select('.mobile-nav-toggle');
-            if (body.classList.contains('mobile-nav-active')) {
-                body.classList.remove('mobile-nav-active');
-                navbarToggle.classList.toggle('bi-list');
-                navbarToggle.classList.toggle('bi-x');
-            }
-        };
-
-        window.addEventListener('load', navbarlinksActive);
-        onscroll(document, navbarlinksActive);
-
-        let backtotop = select('.back-to-top');
-        if (backtotop) {
-            window.addEventListener('load', toggleBacktotop);
-            onscroll(document, toggleBacktotop);
-        }
-
-        on('click', '.mobile-nav-toggle', function (e) {
-            select('body').classList.toggle('mobile-nav-active');
-            this.classList.toggle('bi-list');
-            this.classList.toggle('bi-x');
-        });
-
-        on('click', '.scrollto', function (e) {
-            if (select(this.hash)) {
-                e.preventDefault();
-                let body = select('body');
-                if (body.classList.contains('mobile-nav-active')) {
-                    body.classList.remove('mobile-nav-active');
-                    let navbarToggle = select('.mobile-nav-toggle');
-                    navbarToggle.classList.toggle('bi-list');
-                    navbarToggle.classList.toggle('bi-x');
-                }
-                scrollto(this.hash);
-            }
-        }, true);
-
-        window.addEventListener('load', () => {
-            if (window.location.hash) {
-                if (select(window.location.hash)) {
-                    scrollto(window.location.hash);
-                }
-            }
-        });
-
-        // Close mobile nav on route change
-        router.events.on('routeChangeStart', closeMobileNav);
-
-        return () => {
-            // Clean up event listeners if necessary
-            window.removeEventListener('load', navbarlinksActive);
-            onscroll(document, navbarlinksActive);
-
-            if (backtotop) {
-                window.removeEventListener('load', toggleBacktotop);
-                onscroll(document, toggleBacktotop);
-            }
-
-            // Remove route change listener on unmount
-            router.events.off('routeChangeStart', closeMobileNav);
-        };
-    }, [router]); // Run the effect when the router changes
-
-    return (
-        <>
-            <i className="bi bi-list mobile-nav-toggle d-lg-none"></i>
-            <header id="header" className="d-flex flex-column justify-content-center">
-                <nav id="navbar" className="navbar nav-menu">
-                    <ul>
-                        <li><Link href="/" className="nav-link"><i className="bx bx-home"></i> <span>Home</span></Link></li>
-                        <li><Link href="/shopla" className="nav-link"><i className="bi bi-bag"></i> <span>Shop LA</span></Link></li>
-                        <li><Link href="/shopsfv" className="nav-link"><i className="bi bi-cart"></i> <span>Shop SFV</span></Link></li>
-                        <li><Link href="/about" className="nav-link"><i className="bx bx-user"></i> <span>About</span></Link></li>
-                        <li><Link href="/offers" className="nav-link"><i className="bx bx-star"></i> <span>Offers</span></Link></li>
-                        <li><Link href="/contact" className="nav-link"><i className="bx bx-envelope"></i> <span>Contact</span></Link></li>
-                    </ul>
-                </nav>
-            </header>
-        </>
-    );
-};
-
-export default Header;
+  return (
+    <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
+      <div className="announcement">
+        <div className="site-container announcement__inner">
+          <span>Made for LA. Delivered with care.</span>
+          <span><strong>Free delivery</strong> on orders over $50 <span aria-hidden="true">·</span> Adults 21+</span>
+        </div>
+      </div>
+      <header className="site-header">
+        <div className="site-container site-header__inner">
+          <Link href="/" className="brand" aria-label="BudzDeli home" onClick={() => setMenuOpen(false)}>
+            <span className="brand__symbol" aria-hidden="true">B<span>.</span></span>
+            <span className="brand__name">budz<span>deli</span><span className="brand__dot">.</span></span>
+          </Link>
+          <button
+            type="button"
+            className={menuOpen ? 'menu-toggle is-open' : 'menu-toggle'}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            aria-controls="main-navigation"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span /><span /><span />
+          </button>
+          <nav id="main-navigation" className={menuOpen ? 'site-nav is-open' : 'site-nav'} aria-label="Primary navigation">
+            <div className="site-nav__pages">
+              {links.map(({ href, label }) => (
+                <Link key={href} href={href} className={router.pathname === href ? 'site-nav__link is-current' : 'site-nav__link'} aria-current={router.pathname === href ? 'page' : undefined} onClick={() => setMenuOpen(false)}>{label}</Link>
+              ))}
+            </div>
+            <div className="site-nav__actions">
+              <Link className="site-nav__secondary" href="/shopsfv" onClick={() => setMenuOpen(false)}>Shop SFV <span aria-hidden="true">↗</span></Link>
+              <Link className="button button--dark button--small" href="/shopla" onClick={() => setMenuOpen(false)}>Shop Los Angeles <span aria-hidden="true">↗</span></Link>
+            </div>
+          </nav>
+        </div>
+      </header>
+    </>
+  );
+}

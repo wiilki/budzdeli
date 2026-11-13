@@ -1,28 +1,14 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import { Html, Head, Main, NextScript } from 'next/document';
 
-class MyDocument extends Document {
-  render() {
-    return (
-      <Html>
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-            rel="stylesheet"
-          />
-          <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet" />
-
-
-          <link rel="icon" href="/img/wmlogo.png" />
-
-          <link rel="apple-touch-icon" href="/img/wmlogo.png" />
-        </Head>
-        <body>
-          <Main />
-          <NextScript />
-        </body>
-      </Html>
-    );
-  }
+export default function MyDocument() {
+  return (
+    <Html lang="en">
+      <Head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400,0,0;0,9..144,500,0,0;0,9..144,600,0,0;1,9..144,400,0,0&display=swap" rel="stylesheet" />
+      </Head>
+      <body><Main /><NextScript /></body>
+    </Html>
+  );
 }
-
-export default MyDocument;
